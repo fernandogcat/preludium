@@ -1,7 +1,12 @@
 extends Node
 
-# TODO: hacerlo autoload? quizás con scene+resource? pq este globals no tiene mucho sense
-var config: GameConfiguration
+const CONFIG_RESOURCE_PATH = "res://Components/GameConfiguration/GameConfiguration.tres"
 
-func setup(_config: GameConfiguration):
-	config = _config
+var config: GameConfiguration
+var settings: SettingsManager
+
+func setup():
+	config = preload(CONFIG_RESOURCE_PATH)
+	config.setup()
+	settings = SettingsManager.new()
+	settings.setup()

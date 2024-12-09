@@ -8,21 +8,14 @@ extends BaseScreen
 
 @export var min_time_to_wait: float = 0.6
 
-# var _game_settings := SettingsManager.new()
 var _start_loading_time: float
 
 func _ready():
-	var game_configuration := preload("res://Components/GameConfiguration/GameConfiguration.tres")
-	game_configuration.setup()
-	Globals.setup(game_configuration)
-	# _game_settings.setup()
-	
-	# Globals.settings = _game_settings
-
 	_start_loading()
 
 func _start_loading():
 	_start_loading_time = Time.get_unix_time_from_system()
+	Globals.setup()
 	# await Flasher.setup(game_configuration.pool_size_flashes).finished
 	# await TilesPool.build("DeckTilesPool", get_tree().get_root()).setup(deck_tile_scene,_bullets_pool_size).finished
 	# await TilesPool.build("EnemyTilesPool", get_tree().get_root()).setup(enemy_tile_scene, game_configuration.pool_size_enemy_tiles).finished
