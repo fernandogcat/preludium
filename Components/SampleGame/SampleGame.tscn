@@ -10,6 +10,7 @@ script = ExtResource("1_nvrw1")
 [node name="Ship" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(960, 540)
+rotation = -1.57079
 script = ExtResource("3_sk2cm")
 speed = 150.0
 
