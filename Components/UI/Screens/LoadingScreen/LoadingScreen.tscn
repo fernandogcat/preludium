@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpjeq4jcxqm81"]
 
 [ext_resource type="Script" path="res://Components/UI/Screens/LoadingScreen/LoadingScreen.gd" id="1_4h3wv"]
-[ext_resource type="Texture2D" uid="uid://bald0qs55gxfe" path="res://icon.svg" id="2_crr7k"]
+[ext_resource type="Texture2D" uid="uid://csychq3lglhur" path="res://Art/Bullet/playerShip2_orange.png" id="2_utyv2"]
 
 [sub_resource type="Animation" id="Animation_682di"]
 length = 0.001
@@ -15,32 +15,6 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_xp43r"]
-resource_name = "end_loading"
-length = 0.2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1920, -0.0119626, -650.689, 0, 0),
-"times": PackedFloat32Array(0, 0.2)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -92,6 +66,32 @@ tracks/2/keys = {
 "args": [&"loading_screen_has_full_coverage"],
 "method": &"emit_signal"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_xp43r"]
+resource_name = "end_loading"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1920, -0.0119626, -650.689, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_exqtu"]
@@ -167,4 +167,4 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("2_crr7k")
+texture = ExtResource("2_utyv2")
