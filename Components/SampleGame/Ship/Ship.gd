@@ -1,25 +1,26 @@
 class_name Ship
 extends Node2D
 
-const bullet_path = "res://Components/Bullet/Bullet.tscn"
+signal ship_shot(start_global_position: Vector2, direction: Vector2)
 
 @export var speed: float = 10
 
-func check_attack():
-	if !Input.is_action_just_pressed("fire"): return
-	_fire_bullet()
+var num_shots = 0
 
-func move(delta):
+func check_shoot_input():
+	if !Input.is_action_just_pressed("shoot"): return
+	perform_shoot()
+
+func check_move(delta):
 	var movement = _get_movement()
 	if movement == Vector2.ZERO: return
 	transform.origin += movement * speed * delta
 	_update_direction(movement)
 
-func _fire_bullet():
-	var bullet := preload(bullet_path).instantiate()
+func perform_shoot():
 	var direction := Vector2(1, 0).rotated(rotation)
-	bullet.setup(global_position, direction)
-	get_parent().add_child(bullet)
+	ship_shot.emit(global_position, direction)
+	num_shots += 1
 
 func _get_movement() -> Vector2:
 	var movement = Vector2(
