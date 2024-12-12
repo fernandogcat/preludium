@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://1k1kjwke51wq"]
+
+[ext_resource type="Script" path="res://Components/SampleGame/Ship/Ship.gd" id="1_vbarh"]
+[ext_resource type="Texture2D" uid="uid://csychq3lglhur" path="res://Art/Bullet/playerShip2_orange.png" id="2_xkmgm"]
+
+[node name="Ship" type="Node2D"]
+z_index = 10
+position = Vector2(960, 540)
+rotation = -1.57079
+script = ExtResource("1_vbarh")
+speed = 150.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_xkmgm")
