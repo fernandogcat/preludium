@@ -16,10 +16,14 @@ func _check_ui_actions_input(event: InputEvent) -> bool:
 		if Globals.config.quick_exit_game:
 			LoadSceneManager.exit_game()
 		else:
-			show_modal_screen(pause_modal_screen)
+			toggle_modal_screen(pause_modal_screen)
 		return true
 
 	return false
 
+func show_modal_screen(modal_screen: BaseModalScreen, show_modal: bool):
+	super.show_modal_screen(modal_screen, show_modal)
+	game_logic.pause_game(show_modal)
+
 func _on_pause_button_pressed():
-	show_modal_screen(pause_modal_screen)
+	toggle_modal_screen(pause_modal_screen)

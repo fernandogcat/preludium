@@ -3,10 +3,27 @@ extends Node
 
 @onready var ship := %Ship
 
+var game_state: GameState
+
 func _ready():
 	ship.ship_shot.connect(_on_ship_shot)
+	game_state = GameState.new()
+	start_game()
+
+func reset_game():
+	game_state.set_state_wait()
+
+func pause_game(pause: bool):
+	if pause:
+		game_state.set_state_wait()
+	else:
+		game_state.set_state_player_turn()
+
+func start_game():
+	game_state.set_state_player_turn()
 
 func update_physics(delta):
+	if !game_state.is_player_turn(): return
 	ship.check_input_move(delta)
 	ship.check_input_shoot()
 
