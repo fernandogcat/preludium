@@ -28,6 +28,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -36,7 +40,8 @@ folder_colors={
 "res://Common/": "yellow",
 "res://Components/": "green",
 "res://Components/UI/": "blue",
-"res://Themes/": "purple"
+"res://Tests/": "purple",
+"res://Themes/": "pink"
 }
 
 [input]
