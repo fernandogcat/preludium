@@ -1,11 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://q830eto1dc0m"]
 
 [ext_resource type="Script" path="res://Components/UI/ModalScreens/SettingsModalScreen/SettingsModalScreen.gd" id="1_5alu5"]
+[ext_resource type="Theme" uid="uid://bono3fyl16mwv" path="res://Themes/MainTheme.tres" id="2_1s6xc"]
 [ext_resource type="PackedScene" uid="uid://gmk6c6ovlgr5" path="res://Components/UI/Buttons/ToggleFullscreenButton/ToggleFullscreenButton.tscn" id="2_3prie"]
 [ext_resource type="PackedScene" uid="uid://cdj8mtvppa8xu" path="res://Components/UI/Buttons/CloseModalButton/CloseModalButton.tscn" id="2_fpkw8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k67wa"]
-bg_color = Color(0.803922, 0.494118, 0.580392, 0.72549)
 
 [node name="SettingsModalScreen" type="Control"]
 z_index = 100
@@ -15,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_1s6xc")
 script = ExtResource("1_5alu5")
 
 [node name="Background" type="Panel" parent="."]
@@ -30,8 +29,7 @@ offset_right = 425.0
 offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(425, 350)
-theme_override_styles/panel = SubResource("StyleBoxFlat_k67wa")
+theme_type_variation = &"ModalPanel"
 
 [node name="CloseModalButton" parent="Background" instance=ExtResource("2_fpkw8")]
 unique_name_in_owner = true
@@ -62,11 +60,10 @@ theme_override_constants/separation = 60
 
 [node name="TitleLabel" type="Label" parent="Background/CenterContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.237078, 0.307967, 0.569595, 1)
-theme_override_font_sizes/font_size = 120
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ToggleFullscreenButton" parent="Background/CenterContainer" instance=ExtResource("2_3prie")]
 layout_mode = 2
+flat = true

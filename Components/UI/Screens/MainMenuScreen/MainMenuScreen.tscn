@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_t6lps")
 script = ExtResource("1_xsnei")
 
 [node name="Background" type="Panel" parent="."]
@@ -21,7 +22,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_t6lps")
 
 [node name="CenterContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,7 +40,6 @@ theme_override_constants/separation = 60
 
 [node name="TitleLabel" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme = ExtResource("2_t6lps")
 text = "Best Game Ever"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -51,17 +50,14 @@ theme_override_constants/separation = 60
 
 [node name="StartGameButton" type="Button" parent="CenterContainer/ButtonsContainer"]
 layout_mode = 2
-theme = ExtResource("2_t6lps")
 text = "Start Game"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/ButtonsContainer"]
 layout_mode = 2
-theme = ExtResource("2_t6lps")
 text = "Settings"
 
 [node name="ExitButton" type="Button" parent="CenterContainer/ButtonsContainer"]
 layout_mode = 2
-theme = ExtResource("2_t6lps")
 text = "Exit"
 
 [node name="VersionLabel" type="Label" parent="."]
@@ -79,6 +75,7 @@ offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 20
 text = "vX.X.X"
 

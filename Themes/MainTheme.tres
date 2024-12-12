@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bono3fyl16mwv"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bono3fyl16mwv"]
 
 [ext_resource type="FontFile" uid="uid://ciorv4efb4vbr" path="res://Art/Fonts/RobotoCondensed-Regular.ttf" id="1_dtcwk"]
 
@@ -66,6 +66,20 @@ shadow_offset = Vector2(6, 6)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrrwf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmlb6"]
+bg_color = Color(0.4154, 0.62, 0.55862, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.26, 0.151667, 0.13, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(10, 10)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0clk"]
 bg_color = Color(0.262745, 0.462745, 0.423529, 1)
 
@@ -107,4 +121,6 @@ Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 120
 Label/fonts/font = ExtResource("1_dtcwk")
 Label/styles/normal = SubResource("StyleBoxEmpty_rrrwf")
+ModalPanel/base_type = &"Panel"
+ModalPanel/styles/panel = SubResource("StyleBoxFlat_dmlb6")
 Panel/styles/panel = SubResource("StyleBoxFlat_y0clk")
