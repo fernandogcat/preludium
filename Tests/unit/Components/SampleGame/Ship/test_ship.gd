@@ -13,7 +13,6 @@ func after_each():
 func test_ship_starts_without_shots():
     assert_eq(sut.num_shots, 0)
 
-
 func test_perform_shoot_increases_num_shots():
     sut.perform_shoot()
 

@@ -16,7 +16,7 @@
  "gut_on_top": true,
  "hide_orphans": false,
  "ignore_pause": false,
- "include_subdirs": false,
+ "include_subdirs": true,
  "junit_xml_file": "",
  "junit_xml_timestamp": false,
  "log_level": 1,
