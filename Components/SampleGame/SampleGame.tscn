@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq3dpwcjv8axf"]
+
+[ext_resource type="Script" path="res://Components/SampleGame/GameLogic/GameLogic.gd" id="1_nvrw1"]
+[ext_resource type="Texture2D" uid="uid://csychq3lglhur" path="res://Art/Bullet/playerShip2_orange.png" id="1_p0nuw"]
+[ext_resource type="Script" path="res://Components/SampleGame/Ship/Ship.gd" id="3_sk2cm"]
+
+[node name="GameLogic" type="Node"]
+script = ExtResource("1_nvrw1")
+
+[node name="Ship" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(960, 540)
+script = ExtResource("3_sk2cm")
+speed = 150.0
+
+[node name="Sprite" type="Sprite2D" parent="Ship"]
+rotation = 1.5708
+texture = ExtResource("1_p0nuw")

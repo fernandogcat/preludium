@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs1y00fuqh6pm"]
+
+[ext_resource type="Script" path="res://Autoloads/LoadSceneManager.gd" id="1_0r37n"]
+
+[node name="LoadSceneManager" type="Node"]
+script = ExtResource("1_0r37n")
+screen_paths = {
+"GAME": "res://Components/UI/Screens/GameScreen/GameScreen.tscn",
+"INITIAL_BOOTSTRAP": "res://Components/UI/Screens/GameLoaderBootstrapScreen/GameLoaderBootstrapScreen.tscn",
+"MAIN_MENU": "res://Components/UI/Screens/MainMenuScreen/MainMenuScreen.tscn"
+}

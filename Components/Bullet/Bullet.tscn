@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://7p5jj6yagkqe"]
+
+[ext_resource type="Texture2D" uid="uid://dmk6xwdw5qix4" path="res://Art/Bullet/laserBlue16.png" id="1_vkx5q"]
+
+[node name="Bullet" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(24, 0)
+rotation = 1.5708
+texture = ExtResource("1_vkx5q")

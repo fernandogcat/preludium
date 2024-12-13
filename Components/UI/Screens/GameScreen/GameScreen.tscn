@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmhjj6a1jlxu3"]
+
+[ext_resource type="Script" path="res://Components/UI/Screens/GameScreen/GameScreen.gd" id="1_6kx5l"]
+[ext_resource type="PackedScene" uid="uid://cq3dpwcjv8axf" path="res://Components/SampleGame/SampleGame.tscn" id="2_clk6v"]
+[ext_resource type="PackedScene" uid="uid://xdyau7o5vjus" path="res://Components/UI/ModalScreens/PauseModalScreen/PauseModalScreen.tscn" id="2_is3xx"]
+
+[node name="GameScreen" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6kx5l")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseButton" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -264.0
+offset_top = 82.0
+offset_right = -82.0
+offset_bottom = 173.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "Pause"
+
+[node name="PauseModalScreen" parent="HUD" instance=ExtResource("2_is3xx")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="GameLogic" parent="." instance=ExtResource("2_clk6v")]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="HUD/PauseButton" to="." method="_on_pause_button_pressed"]

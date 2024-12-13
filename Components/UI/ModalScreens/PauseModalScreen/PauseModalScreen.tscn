@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://xdyau7o5vjus"]
+
+[ext_resource type="Script" path="res://Components/UI/ModalScreens/PauseModalScreen/PauseModalScreen.gd" id="1_twhr2"]
+[ext_resource type="PackedScene" uid="uid://cdj8mtvppa8xu" path="res://Components/UI/Buttons/CloseModalButton/CloseModalButton.tscn" id="2_je44f"]
+[ext_resource type="PackedScene" uid="uid://gmk6c6ovlgr5" path="res://Components/UI/Buttons/ToggleFullscreenButton/ToggleFullscreenButton.tscn" id="4_oatnn"]
+[ext_resource type="Theme" uid="uid://bono3fyl16mwv" path="res://Themes/MainTheme.tres" id="5_e4pve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k67wa"]
+bg_color = Color(0.803922, 0.494118, 0.580392, 0.72549)
+
+[node name="PauseModalScreen" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twhr2")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -350.0
+offset_right = 425.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(425, 350)
+theme_override_styles/panel = SubResource("StyleBoxFlat_k67wa")
+
+[node name="CloseModalButton" parent="Background" instance=ExtResource("2_je44f")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -99.0
+offset_top = 51.0
+offset_right = -35.0
+offset_bottom = 115.0
+
+[node name="CenterContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -236.0
+offset_right = 237.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="TitleLabel" type="Label" parent="Background/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("5_e4pve")
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToggleFullscreenButton" parent="Background/CenterContainer" instance=ExtResource("4_oatnn")]
+layout_mode = 2
+
+[node name="BottomContainer" type="HBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -168.0
+offset_right = 237.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="Background/BottomContainer"]
+layout_mode = 2
+theme = ExtResource("5_e4pve")
+text = "Main Menu"
+
+[node name="ExitButton" type="Button" parent="Background/BottomContainer"]
+layout_mode = 2
+theme = ExtResource("5_e4pve")
+text = "Exit Game"
+
+[connection signal="pressed" from="Background/BottomContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Background/BottomContainer/ExitButton" to="." method="_on_exit_button_pressed"]
