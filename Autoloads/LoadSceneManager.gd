@@ -17,10 +17,10 @@ const LOAD_ANIMATION_OUTRO_DEFAULT := "swipe_out_to_right"
 
 @export var screen_paths: Dictionary # [ScreenNameString: ScenePathString]
 
-var use_sub_threads: bool = false
+var use_sub_threads := false
 
 var _next_screen_path: String
-var _progress: Array = []
+var _progress := []
 
 func _ready():
 	set_process(false)

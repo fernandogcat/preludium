@@ -3,8 +3,8 @@ extends Node2D
 
 const BULLET_PATH = "res://Components/Bullet/Bullet.tscn"
 
-var speed = 400
-var direction = Vector2()
+var speed := 400
+var direction := Vector2()
 
 static func build() -> Bullet:
 	var bullet := preload(BULLET_PATH).instantiate()
