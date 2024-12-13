@@ -46,7 +46,7 @@ jobs:
           # this is to fix GIT not liking owner of the checkout dir
           chown -R $(id -u):$(id -g) $PWD
 
-      - name: Calculate application Version
+      - name: Calculate application version
         id: application_version
         uses: paulhatch/semantic-version@v5.4.0
         with:

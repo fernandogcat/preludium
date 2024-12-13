@@ -1,7 +1,7 @@
 class_name Bullet
 extends Node2D
 
-const BULLET_PATH = "res://Components/Bullet/Bullet.tscn"
+const BULLET_PATH = "res://Components/Bullet/bullet.tscn"
 
 var speed := 400
 var direction := Vector2()
