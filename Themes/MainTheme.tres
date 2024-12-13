@@ -67,7 +67,7 @@ shadow_offset = Vector2(6, 6)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrrwf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmlb6"]
-bg_color = Color(0.4154, 0.62, 0.55862, 1)
+bg_color = Color(0.99, 0.4158, 0.42537, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
