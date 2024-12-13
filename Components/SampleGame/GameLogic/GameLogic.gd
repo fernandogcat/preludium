@@ -1,9 +1,9 @@
 class_name GameLogic
 extends Node
 
-@onready var ship := %Ship
-
 var game_state: GameState
+
+@onready var ship := %Ship
 
 func _ready():
 	ship.ship_shot.connect(_on_ship_shot)

@@ -63,7 +63,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.199694),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [&"loading_screen_has_full_coverage"],
+"args": [&"loading_screen_coverage_completed"],
 "method": &"emit_signal"
 }]
 }

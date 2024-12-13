@@ -1,7 +1,9 @@
 class_name BaseScreen
 extends Node
 
-## Used to let the new screen keep loading stuff while LoadingScreen is shown. When the new screen is ready, its their responsibility to emit the signal `LoadSceneManager.new_screen_completed_loading` manually.
+## Used to let the new screen keep loading stuff while LoadingScreen is shown.
+## When the new screen is ready, its their responsibility to emit
+## the signal `LoadSceneManager.new_screen_loading_completed` manually
 @export var handle_finish_loading_manually: bool = false
 
 func toggle_modal_screen(modal_screen: BaseModalScreen) -> bool:

@@ -1,11 +1,6 @@
 class_name GameLoaderBootstrapScreen
 extends BaseScreen
 
-# var _bullets_pool_size = 200
-
-# TODO: change to bullets
-# @export var deck_tile_scene := preload("res://Components/Bullet/Bullet.tscn")
-
 @export var min_time_to_wait: float = 0.6
 
 var _start_loading_time: float
@@ -16,10 +11,6 @@ func _ready():
 func _start_loading():
 	_start_loading_time = Time.get_unix_time_from_system()
 	Globals.setup()
-	# await Flasher.setup(game_configuration.pool_size_flashes).finished
-	# await TilesPool.build("DeckTilesPool", get_tree().get_root()).setup(deck_tile_scene,_bullets_pool_size).finished
-	# await TilesPool.build("EnemyTilesPool", get_tree().get_root()).setup(enemy_tile_scene, game_configuration.pool_size_enemy_tiles).finished
-	# await DeckTilesUIPool.build("PlayerDeckTilesUIPool", get_tree().get_root()).setup_tiles_ui(game_configuration.pool_size_player_tiles_ui).finished
 	_on_loading_complete()
 
 func _on_loading_complete():
@@ -27,7 +18,7 @@ func _on_loading_complete():
 	var minimum_time_to_show_splash_screen := min_time_to_wait - (now - _start_loading_time)
 	if minimum_time_to_show_splash_screen > 0:
 		await get_tree().create_timer(minimum_time_to_show_splash_screen).timeout
-	LoadSceneManager.new_screen_completed_loading.emit()
+	LoadSceneManager.new_screen_loading_completed.emit()
 
 	var next_screen: LoadSceneManager.Screen
 	if Globals.config.quick_skip_main_screen:

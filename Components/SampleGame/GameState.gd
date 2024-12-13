@@ -1,5 +1,7 @@
 class_name GameState
 
+signal new_state_started
+
 enum StateType {
 	WAIT = 0,
 	PLAYER_TURN = 1,
@@ -7,8 +9,6 @@ enum StateType {
 
 var _current_state: StateType
 var _previous_state: StateType
-
-signal new_state_started
 
 func _init():
 	set_state_wait()

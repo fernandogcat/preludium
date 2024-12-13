@@ -1,13 +1,13 @@
 class_name Bullet
 extends Node2D
 
-const bullet_path = "res://Components/Bullet/Bullet.tscn"
+const BULLET_PATH = "res://Components/Bullet/Bullet.tscn"
 
 var speed = 400
 var direction = Vector2()
 
 static func build() -> Bullet:
-	var bullet := preload(bullet_path).instantiate()
+	var bullet := preload(BULLET_PATH).instantiate()
 	return bullet
 
 func setup(_global_position: Vector2, _direction: Vector2) -> Bullet:
