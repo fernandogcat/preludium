@@ -1,0 +1,8 @@
+name: Run tests 🧪
+on: 
+  push
+
+jobs:
+  call-reusable-run-tests:
+    name: Run tests
+    uses: ./.github/workflows/reusable_run_tests.yml

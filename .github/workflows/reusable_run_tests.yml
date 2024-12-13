@@ -1,0 +1,26 @@
+name: 🔁 Run Tests Reusable Workflow
+on:
+  workflow_call
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: barichello/godot-ci:4.3
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Required import before running tests
+      - name: Import assets
+        run: godot --headless --path . --import
+
+      - name: Run tests
+        id: run-tests-script
+        run: |
+          ./scripts/run_tests.sh
