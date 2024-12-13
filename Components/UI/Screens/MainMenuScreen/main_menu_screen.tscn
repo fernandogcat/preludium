@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfy8ewuknwpi0"]
 
-[ext_resource type="Script" path="res://Components/UI/Screens/MainMenuScreen/MainMenuScreen.gd" id="1_xsnei"]
-[ext_resource type="PackedScene" uid="uid://q830eto1dc0m" path="res://Components/UI/ModalScreens/SettingsModalScreen/SettingsModalScreen.tscn" id="2_128ot"]
-[ext_resource type="Theme" uid="uid://bono3fyl16mwv" path="res://Themes/MainTheme.tres" id="2_t6lps"]
+[ext_resource type="Script" path="res://Components/UI/Screens/MainMenuScreen/main_menu_screen.gd" id="1_xsnei"]
+[ext_resource type="PackedScene" uid="uid://q830eto1dc0m" path="res://Components/UI/ModalScreens/SettingsModalScreen/settings_modal_screen.tscn" id="2_128ot"]
+[ext_resource type="Theme" uid="uid://bono3fyl16mwv" path="res://Themes/main_theme.tres" id="2_t6lps"]
 
 [node name="MainMenuScreen" type="Control"]
 z_index = 100

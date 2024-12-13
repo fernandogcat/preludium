@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpjeq4jcxqm81"]
 
-[ext_resource type="Script" path="res://Components/UI/Screens/LoadingScreen/LoadingScreen.gd" id="1_4h3wv"]
+[ext_resource type="Script" path="res://Components/UI/Screens/LoadingScreen/loading_screen.gd" id="1_4h3wv"]
 [ext_resource type="Texture2D" uid="uid://csychq3lglhur" path="res://Art/Bullet/playerShip2_orange.png" id="2_utyv2"]
 
 [sub_resource type="Animation" id="Animation_682di"]

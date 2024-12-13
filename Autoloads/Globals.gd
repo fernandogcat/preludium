@@ -1,6 +1,6 @@
 extends Node
 
-const CONFIG_RESOURCE_PATH = "res://Components/GameConfiguration/GameConfiguration.tres"
+const CONFIG_RESOURCE_PATH = "res://Components/GameConfiguration/game_configuration.tres"
 
 var config: GameConfiguration
 var settings: SettingsManager

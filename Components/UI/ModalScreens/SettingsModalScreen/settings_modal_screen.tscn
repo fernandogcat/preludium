@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://q830eto1dc0m"]
 
-[ext_resource type="Script" path="res://Components/UI/ModalScreens/SettingsModalScreen/SettingsModalScreen.gd" id="1_5alu5"]
-[ext_resource type="Theme" uid="uid://bono3fyl16mwv" path="res://Themes/MainTheme.tres" id="2_1s6xc"]
-[ext_resource type="PackedScene" uid="uid://gmk6c6ovlgr5" path="res://Components/UI/Buttons/ToggleFullscreenButton/ToggleFullscreenButton.tscn" id="2_3prie"]
-[ext_resource type="PackedScene" uid="uid://cdj8mtvppa8xu" path="res://Components/UI/Buttons/CloseModalButton/CloseModalButton.tscn" id="2_fpkw8"]
+[ext_resource type="Script" path="res://Components/UI/ModalScreens/SettingsModalScreen/settings_modal_screen.gd" id="1_5alu5"]
+[ext_resource type="Theme" uid="uid://bono3fyl16mwv" path="res://Themes/main_theme.tres" id="2_1s6xc"]
+[ext_resource type="PackedScene" uid="uid://gmk6c6ovlgr5" path="res://Components/UI/Buttons/ToggleFullscreenButton/toggle_fullscreen_button.tscn" id="2_3prie"]
+[ext_resource type="PackedScene" uid="uid://cdj8mtvppa8xu" path="res://Components/UI/Buttons/CloseModalButton/close_modal_button.tscn" id="2_fpkw8"]
 
 [node name="SettingsModalScreen" type="Control"]
 z_index = 100

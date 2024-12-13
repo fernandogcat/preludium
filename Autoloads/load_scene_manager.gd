@@ -9,7 +9,7 @@ enum Screen {
 	GAME = 2,
 }
 
-const LOADING_SCREEN := preload("res://Components/UI/Screens/LoadingScreen/LoadingScreen.tscn")
+const LOADING_SCREEN := preload("res://Components/UI/Screens/LoadingScreen/loading_screen.tscn")
 
 const LOAD_ANIMATION_NONE := ""
 const LOAD_ANIMATION_INTRO_DEFAULT := "swipe_in_from_right"
