@@ -14,7 +14,7 @@ func check_input_move(delta):
 	_update_direction(input_movement)
 
 func check_input_shoot():
-	if is_input_shoot_pressed():
+	if InputManager.is_input_shoot_just_pressed():
 		perform_shoot()
 
 func perform_shoot():
@@ -28,9 +28,6 @@ func _get_input_movement() -> Vector2:
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	return movement.normalized()
-
-func is_input_shoot_pressed() -> bool:
-	return Input.is_action_just_pressed("shoot")
 
 func _update_direction(movement: Vector2):
 	var angle_rad = movement.angle()
