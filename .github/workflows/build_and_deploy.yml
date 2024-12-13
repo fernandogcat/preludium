@@ -1,0 +1,84 @@
+name: Build + Deploy to itch.io ✨
+on: 
+  workflow_dispatch
+
+env:
+  ITCHIO_USERNAME: ${{ secrets.ITCHIO_USERNAME }}
+  ITCHIO_GAME: ${{ secrets.ITCHIO_GAME }}
+  EXPORT_NAME: ${{ secrets.EXPORT_NAME }}
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  EXPORT_PATH: ./Builds
+
+jobs:
+  call-reusable-run-tests:
+    name: Run tests
+    uses: ./.github/workflows/reusable_run_tests.yml
+
+  build-and-deploy-to-itchio:
+    name: Build and deploy to itch.io
+    needs: call-reusable-run-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: barichello/godot-ci:4.3
+
+    env:
+      # if you change this, remember to update the image version below
+      GODOT_VERSION: 4.3
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Godot export templates
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+
+      # Fix to allow running git commands (as required by semantic-version action). 
+      # If this is not included we get the error "detected dubious ownership". 
+      # See: https://github.com/actions/runner/issues/2033
+      - name: Set ownership
+        run: |
+          # this is to fix GIT not liking owner of the checkout dir
+          chown -R $(id -u):$(id -g) $PWD
+
+      - name: Calculate application Version
+        id: application_version
+        uses: paulhatch/semantic-version@v5.4.0
+        with:
+          user_format_type: "json"
+          tag_prefix: "v"
+          version_format: "v${major}.${minor}.${patch}-${increment}"
+          # debug: true
+
+      - name: Generate project version
+        env:
+          VERSION: ${{ steps.application_version.outputs.version }}
+        run: |
+          # echo "--- debug_output ---"
+          # echo ${{ steps.application_version.outputs.debug_output }}
+          echo "--- VERSION ---"
+          echo "Setting project version to $VERSION"
+          ./scripts/set_project_version.sh $VERSION
+
+      - name: Windows Build + Itch.io Deploy 🚀
+        run: |
+          ./scripts/build_and_push_to_itchio.sh win ${EXPORT_PATH}/win/${EXPORT_NAME}.exe ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
+
+      - name: Web Build + Itch.io Deploy 🚀
+        run: |
+          ./scripts/build_and_push_to_itchio.sh html5 ${EXPORT_PATH}/html5/index.html ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
+  
+      - name: Commit and push version change
+        env:
+          VERSION: ${{ steps.application_version.outputs.version }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add project.godot
+          git commit -m "🚀 Deployed new build $VERSION!"
+          git push

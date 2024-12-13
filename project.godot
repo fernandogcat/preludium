@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="preludium"
-config/version="0.1.0"
+config/version="v0.0.1-20"
 run/main_scene="res://game_entrypoint.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -37,11 +37,14 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 folder_colors={
 "res://Art/": "red",
 "res://Autoloads/": "orange",
+"res://Builds/": "gray",
 "res://Common/": "yellow",
 "res://Components/": "green",
 "res://Components/UI/": "blue",
 "res://Tests/": "purple",
-"res://Themes/": "pink"
+"res://Themes/": "pink",
+"res://addons/": "gray",
+"res://scripts/": "gray"
 }
 
 [input]
@@ -85,3 +88,4 @@ shoot={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

@@ -1,4 +1,4 @@
-name: 🔁 Run Tests Reusable Workflow
+name: 🔁 Reusable Workflow - Run Tests
 on:
   workflow_call
 
