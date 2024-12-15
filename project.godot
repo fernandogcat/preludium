@@ -14,7 +14,8 @@ config/name="preludium"
 config/version="v0.1.1-0"
 run/main_scene="res://game_entrypoint.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="res://background.png"
+config/icon="res://icon.png"
 
 [autoload]
 
