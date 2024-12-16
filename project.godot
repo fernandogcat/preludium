@@ -31,7 +31,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/window_helper/plugin.cfg")
 
 [file_customization]
 
@@ -45,6 +45,7 @@ folder_colors={
 "res://Tests/": "purple",
 "res://Themes/": "pink",
 "res://addons/": "gray",
+"res://addons/window_helper/": "pink",
 "res://scripts/": "gray"
 }
 
