@@ -15,7 +15,7 @@ func _check_ui_actions_input(event: InputEvent):
 		_pressed_exit()
 
 func _on_start_game_button_pressed():
-	LoadSceneManager.load_scene(LoadSceneManager.Screen.GAME)
+	LoadSceneManager.load_scene(GameScreens.Screen.GAME)
 
 func _on_settings_button_pressed():
 	toggle_modal_screen(settings_modal_screen)

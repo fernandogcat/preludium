@@ -3,21 +3,13 @@ extends Node
 signal progress_changed(progress)
 signal new_screen_loading_completed
 
-enum Screen {
-	INITIAL_BOOTSTRAP = 0,
-	MAIN_MENU = 1,
-	GAME = 2,
-}
-
 const LOADING_SCREEN := preload("res://Components/UI/Screens/LoadingScreen/loading_screen.tscn")
 
 const LOAD_ANIMATION_NONE := ""
 const LOAD_ANIMATION_INTRO_DEFAULT := "swipe_in_from_right"
 const LOAD_ANIMATION_OUTRO_DEFAULT := "swipe_out_to_right"
 
-@export var screen_paths: Dictionary # [ScreenNameString: ScenePathString]
-
-var use_sub_threads := false
+var _game_screens := preload("res://Components/GameScreens/game_screens.tres")
 
 var _next_screen_path: String
 var _progress := []
@@ -26,14 +18,11 @@ func _ready():
 	set_process(false)
 
 func load_scene(
-	next_screen: Screen,
+	next_screen: GameScreens.Screen,
 	intro_animation: String = LoadSceneManager.LOAD_ANIMATION_INTRO_DEFAULT,
 	outro_animation: String = LoadSceneManager.LOAD_ANIMATION_OUTRO_DEFAULT,
 	) -> void:
-	var screen_path_string_key := EnumUtils.get_string_name_from_value(Screen, next_screen)
-	if !screen_paths.has(screen_path_string_key):
-		assert(false, "Not found screen path for: [%s]. Check adding it to LoadSceneManager.screen_paths scene" % screen_path_string_key)
-	_next_screen_path = screen_paths[screen_path_string_key]
+	_next_screen_path = _game_screens.get_screen_path(next_screen)
 
 	var new_loading_screen = LOADING_SCREEN.instantiate()
 	new_loading_screen.setup(intro_animation, outro_animation)
@@ -46,6 +35,7 @@ func load_scene(
 	_start_load()
 
 func _start_load() -> void:
+	var use_sub_threads := false
 	var state = ResourceLoader.load_threaded_request(_next_screen_path, "", use_sub_threads)
 	if state == OK:
 		set_process(true)

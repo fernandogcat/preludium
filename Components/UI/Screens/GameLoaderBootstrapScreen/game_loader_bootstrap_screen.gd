@@ -20,9 +20,9 @@ func _on_loading_complete():
 		await get_tree().create_timer(minimum_time_to_show_splash_screen).timeout
 	LoadSceneManager.new_screen_loading_completed.emit()
 
-	var next_screen: LoadSceneManager.Screen
+	var next_screen: GameScreens.Screen
 	if Globals.config.quick_skip_main_screen:
-		next_screen = LoadSceneManager.Screen.GAME
+		next_screen = GameScreens.Screen.GAME
 	else:
-		next_screen = LoadSceneManager.Screen.MAIN_MENU
+		next_screen = GameScreens.Screen.MAIN_MENU
 	LoadSceneManager.load_scene(next_screen, LoadSceneManager.LOAD_ANIMATION_NONE, LoadSceneManager.LOAD_ANIMATION_OUTRO_DEFAULT)
