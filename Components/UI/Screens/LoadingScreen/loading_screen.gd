@@ -8,8 +8,6 @@ var outro_animation: String
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var loading_icon: Control = %LoadingIcon
-# TODO: remove progress bar?
-@onready var progress_bar: ProgressBar = $Panel/ProgressBar
 
 func setup(
 	_intro_animation: String = LoadSceneManager.LOAD_ANIMATION_NONE,
@@ -25,9 +23,8 @@ func _ready():
 func _process(_delta):
 	loading_icon.rotation_degrees += 10
 
-func update_progress_bar(new_value: float):
-	# progressLabel.text = str(int(new_value * 100)) + "%"
-	progress_bar.set_value_no_signal(new_value * 100)
+func update_progress_bar(_new_value: float):
+	pass
 
 func _start_intro_animation():
 	if intro_animation != LoadSceneManager.LOAD_ANIMATION_NONE:
