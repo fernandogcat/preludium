@@ -36,6 +36,7 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 - [ ] required settings in github project
     - [ ] set repostitory secrets for Github Actions
     - [ ] set write permissios (Settings > Actions > General) to be able to create version commit
+- folder structure
 - ...
 
 ## Next features to implement
