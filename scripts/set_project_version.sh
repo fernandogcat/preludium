@@ -13,6 +13,3 @@ printf "Updating version number to $VERSION\n"
 sed -i 's/config\/version=".*"/config\/version="'"$VERSION"'"/' project.godot
 
 printf "Version number updated to $VERSION\n"
-printf "project.godot:\n"
-printf "================\n"
-# cat project.godot

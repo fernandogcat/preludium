@@ -7,12 +7,11 @@ const EXPORT_GROUP_DEV_SETTINGS = "DEV Settings"
 
 # @export_group(EXPORT_GROUP_GAME_SETTINGS)
 
-
 @export_group(EXPORT_GROUP_BUILD_SETTINGS)
 
 # TODO: append type of build
-var version: String
 # TODO: create buildtype enum
+var version: String
 
 @export_group(EXPORT_GROUP_DEV_SETTINGS)
 
