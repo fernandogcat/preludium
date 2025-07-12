@@ -66,11 +66,11 @@ jobs:
           echo "Setting project version to $VERSION"
           ./scripts/set_project_version.sh $VERSION
 
-      - name: Itch.io - Windows - Deploy 🚀
+      - name: Itch.io - Windows - Build + Deploy 👷+🚀
         run: |
           ./scripts/build_and_upload_to_itchio.sh win ${EXPORT_PATH}/win/${EXPORT_NAME}.exe ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
-      - name: Itch.io - macOS - Deploy 🚀
+      - name: Itch.io - macOS - Build + Deploy 👷+🚀
         run: |
           ./scripts/build_and_upload_to_itchio.sh macos ${EXPORT_PATH}/macos/${EXPORT_NAME}.app ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
