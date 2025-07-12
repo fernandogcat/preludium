@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
+# Usage on mac when godot is an alias (since aliases are not available on shell scripts):
+# > . scripts/build_with_godot.sh osx ./Builds/osx/export_name.app debug v0.9.0-0
+
 # if called with incorrect number of arguments, print usage
-if [ "$#" -lt 4 ]; then
-  printf "Invalid number of arguments: $# provided, 4 minimum required\n. Usage example: scripts/build_and_push_to_itchio.sh win ./Builds/win/export_name.exe itchio_username itchio_game (debug|release) (find_local_version|vX.X.X)\n"
-  exit 1
+if [ "$#" -lt 3 ]; then
+  printf "Need arguments. Usage example: . scripts/build_with_godot.sh osx ./Builds/osx/export_name.app debug v0.9.0-0\n"
+  return
 fi
 
 PLATFORM=$1
 OUTPUT_FILE=$2
-ITCHIO_USERNAME=$3
-ITCHIO_GAME=$4
-BUILD_MODE=$5
-LOCAL_VERSION=$6
+BUILD_MODE=$3
+LOCAL_VERSION=$4
 
 # if mode is not specified, set release as default
 if [ -z "$BUILD_MODE" ]; then
@@ -29,8 +30,8 @@ if [[ ! "$valid_modes" =~ "$BUILD_MODE" ]]; then
 fi
 
 # check for platform and output file
-if [ -z "$PLATFORM" ] || [ -z "$OUTPUT_FILE" ] || [ -z "$ITCHIO_USERNAME" ] || [ -z "$ITCHIO_GAME" ]; then
-  printf "Required parameters not provided\n. Usage: ./build_and_push_to_itchio.sh win ./Builds/win/export_name.exe itchio_username itchio_game (debug|release) (find_local_version|vX.X.X)\n"
+if [ -z "$PLATFORM" ] || [ -z "$OUTPUT_FILE" ]; then
+  printf "Required parameters not provided\n. Usage: ./build_with_godot.sh win ./Builds/win/export_name.exe (debug|release) (find_local_version|vX.X.X)\n"
   exit 1
 fi
 
@@ -49,12 +50,10 @@ sed -i '' 's/config\/version=".*"/config\/version="'"$VERSION"'"/' project.godot
 # strip the output path from output file
 EXPORT_PATH=$(dirname $OUTPUT_FILE)
 
-# printf "Building for platform: $PLATFORM\n"
-# printf "Output file: $OUTPUT_FILE\n"
-# printf "Export path: $EXPORT_PATH\n"
-# printf "Itch.io username: $ITCHIO_USERNAME\n"
-# printf "Itch.io game: $ITCHIO_GAME\n"
-# printf "Build mode: $BUILD_MODE\n"
+printf "Building for platform: $PLATFORM\n"
+printf "Output file: $OUTPUT_FILE\n"
+printf "Export path: $EXPORT_PATH\n"
+printf "Build mode: $BUILD_MODE\n"
 
 BUILD_MODE_FLAG="--export-debug"
 if [[ "$BUILD_MODE" == "release" ]]; then
@@ -63,5 +62,4 @@ fi
 
 rm -rf $EXPORT_PATH
 mkdir -p $EXPORT_PATH
-godot --verbose "$BUILD_MODE_FLAG" --headless "$PLATFORM" $OUTPUT_FILE
-butler push $EXPORT_PATH $ITCHIO_USERNAME/$ITCHIO_GAME:$PLATFORM
+godot --verbose "$BUILD_MODE_FLAG" --headless "$PLATFORM" $OUTPUT_FILE 

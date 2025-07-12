@@ -15,7 +15,7 @@ jobs:
     uses: ./.github/workflows/reusable_run_tests.yml
 
   build-and-deploy-to-itchio:
-    name: Build and deploy to itch.io
+    name: Build and deploy 👷+🚀
     needs: call-reusable-run-tests
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -32,6 +32,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # lfs: true
 
       - name: Setup Godot export templates
         run: |
@@ -65,11 +66,11 @@ jobs:
           echo "Setting project version to $VERSION"
           ./scripts/set_project_version.sh $VERSION
 
-      - name: Windows Build + Itch.io Deploy 🚀
+      - name: Itch.io - Windows - Deploy 🚀
         run: |
           ./scripts/build_and_push_to_itchio.sh win ${EXPORT_PATH}/win/${EXPORT_NAME}.exe ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
-      - name: Web Build + Itch.io Deploy 🚀
+      - name: Itch.io - Web - Build + Deploy 👷+🚀
         run: |
           ./scripts/build_and_push_to_itchio.sh html5 ${EXPORT_PATH}/html5/index.html ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
   
