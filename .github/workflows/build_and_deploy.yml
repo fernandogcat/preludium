@@ -71,7 +71,6 @@ jobs:
           ./scripts/build_and_upload_to_itchio.sh win ${EXPORT_PATH}/win/${EXPORT_NAME}.exe ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
       - name: Itch.io - macOS - Deploy 🚀
-        if: ${{ inputs.deploy_to_itchio }}
         run: |
           ./scripts/build_and_upload_to_itchio.sh macos ${EXPORT_PATH}/macos/${EXPORT_NAME}.app ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
