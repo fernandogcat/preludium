@@ -41,6 +41,8 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 
 ## Next features to implement
 
+- [ ] check error logs in tests (e.g. `ERROR: Node not found: "%CloseModalButton"`)
+- [ ] check if Popup node could replace ModalScreen
 - [ ] add linter as a precommit and also to CI (if linter fails, the build will not be deployed)
 - [ ] audio buses for music and sfx + persist to user settings
 - [ ] custom logger
@@ -48,3 +50,13 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 - [ ] object pool
 - [ ] integration with discord
 - ...
+
+## Things to change after cloning the project
+
+- [ ] update `project.godot`
+    - [ ] config/name
+    - [ ] config/version
+- [ ] update `export_presets.cfg` export_path's
+- [ ] look for other `preludium` text references
+- [ ] change icon and splash screen: `Art/icon.png` and `Art/boot_splash.png`
+- [ ] update this README.md to remove non game relevant information
