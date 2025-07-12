@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="preludium"
-config/version="v0.1.1-0"
+config/version="v0.1.1-16"
 run/main_scene="res://game_entrypoint.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="res://Art/boot_splash.png"
