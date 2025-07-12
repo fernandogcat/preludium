@@ -38,6 +38,7 @@ static var GutScene = load('res://addons/gut/GutScene.tscn')
 static var LazyLoader = load('res://addons/gut/lazy_loader.gd')
 static var VersionNumbers = load("res://addons/gut/version_numbers.gd")
 static var WarningsManager = load("res://addons/gut/warnings_manager.gd")
+static var EditorGlobals = load("res://addons/gut/gui/editor_globals.gd")
 # --------------------------------
 # Lazy loaded scripts.  These scripts are lazy loaded so that they can be
 # declared, but will not load when this script is loaded.  This gives us a
@@ -62,8 +63,14 @@ static var CollectedScript = LazyLoader.new('res://addons/gut/collected_script.g
 static var CompareResult = LazyLoader.new('res://addons/gut/compare_result.gd'):
 	get: return CompareResult.get_loaded()
 	set(val): pass
+static var DiffFormatter = LazyLoader.new("res://addons/gut/diff_formatter.gd"):
+	get: return DiffFormatter.get_loaded()
+	set(val): pass
 static var DiffTool = LazyLoader.new('res://addons/gut/diff_tool.gd'):
 	get: return DiffTool.get_loaded()
+	set(val): pass
+static var DoubleTools = LazyLoader.new("res://addons/gut/double_tools.gd"):
+	get: return DoubleTools.get_loader()
 	set(val): pass
 static var Doubler = LazyLoader.new('res://addons/gut/doubler.gd'):
 	get: return Doubler.get_loaded()
@@ -92,8 +99,8 @@ static var InputSender = LazyLoader.new("res://addons/gut/input_sender.gd"):
 static var JunitXmlExport = LazyLoader.new('res://addons/gut/junit_xml_export.gd'):
 	get: return JunitXmlExport.get_loaded()
 	set(val): pass
-static var Logger = LazyLoader.new('res://addons/gut/logger.gd') : # everything should use get_logger
-	get: return Logger.get_loaded()
+static var GutLogger = LazyLoader.new('res://addons/gut/logger.gd') : # everything should use get_logger
+	get: return GutLogger.get_loaded()
 	set(val): pass
 static var MethodMaker = LazyLoader.new('res://addons/gut/method_maker.gd'):
 	get: return MethodMaker.get_loaded()
@@ -118,6 +125,9 @@ static var ResultExporter = LazyLoader.new('res://addons/gut/result_exporter.gd'
 	set(val): pass
 static var ScriptCollector = LazyLoader.new('res://addons/gut/script_parser.gd'):
 	get: return ScriptCollector.get_loaded()
+	set(val): pass
+static var SignalWatcher = LazyLoader.new('res://addons/gut/signal_watcher.gd'):
+	get: return SignalWatcher.get_loaded()
 	set(val): pass
 static var Spy = LazyLoader.new('res://addons/gut/spy.gd'):
 	get: return Spy.get_loaded()
@@ -149,7 +159,7 @@ static var avail_fonts = ['AnonymousPro', 'CourierPrime', 'LobsterTwo', 'Default
 
 static var version_numbers = VersionNumbers.new(
 	# gut_versrion (source of truth)
-	'9.3.0',
+	'9.4.0',
 	# required_godot_version
 	'4.2.0'
 )
@@ -174,21 +184,25 @@ static var _test_mode = false
 static var _lgr = null
 static func get_logger():
 	if(_test_mode):
-		return Logger.new()
+		return GutLogger.new()
 	else:
 		if(_lgr == null):
-			_lgr = Logger.new()
+			_lgr = GutLogger.new()
 		return _lgr
 
 
 static var _dyn_gdscript = DynamicGdScript.new()
 static func create_script_from_source(source, override_path=null):
-	var DynamicScript = _dyn_gdscript.create_script_from_source(source, override_path)
+	var are_warnings_enabled = WarningsManager.are_warnings_enabled()
+	WarningsManager.enable_warnings(false)
 
+	var DynamicScript = _dyn_gdscript.create_script_from_source(source, override_path)
 	if(typeof(DynamicScript) == TYPE_INT):
 		var l = get_logger()
 		l.error(str('Could not create script from source.  Error:  ', DynamicScript))
 		l.info(str("Source Code:\n", add_line_numbers(source)))
+
+	WarningsManager.enable_warnings(are_warnings_enabled)
 
 	return DynamicScript
 
@@ -556,7 +570,7 @@ static func get_display_size():
 # The MIT License (MIT)
 # =====================
 #
-# Copyright (c) 2023 Tom "Butch" Wesley
+# Copyright (c) 2025 Tom "Butch" Wesley
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
