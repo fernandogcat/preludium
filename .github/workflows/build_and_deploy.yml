@@ -20,11 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     container:
-      image: barichello/godot-ci:4.3
+      image: barichello/godot-ci:4.4
 
     env:
       # if you change this, remember to update the image version below
-      GODOT_VERSION: 4.3
+      GODOT_VERSION: 4.4
 
     steps:
 

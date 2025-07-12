@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GameScreens" load_steps=2 format=3 uid="uid://xt3nyh4lj3mx"]
 
-[ext_resource type="Script" path="res://Components/GameScreens/game_screens.gd" id="1_niqro"]
+[ext_resource type="Script" uid="uid://bb0cjbnnj14tv" path="res://Components/GameScreens/game_screens.gd" id="1_niqro"]
 
 [resource]
 script = ExtResource("1_niqro")

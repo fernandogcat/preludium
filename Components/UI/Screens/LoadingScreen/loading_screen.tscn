@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpjeq4jcxqm81"]
 
-[ext_resource type="Script" path="res://Components/UI/Screens/LoadingScreen/loading_screen.gd" id="1_4h3wv"]
+[ext_resource type="Script" uid="uid://bokegfnj6ko6m" path="res://Components/UI/Screens/LoadingScreen/loading_screen.gd" id="1_4h3wv"]
 [ext_resource type="Texture2D" uid="uid://csychq3lglhur" path="res://Art/Bullet/playerShip2_orange.png" id="2_utyv2"]
 
 [sub_resource type="Animation" id="Animation_682di"]
@@ -96,9 +96,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_exqtu"]
 _data = {
-"RESET": SubResource("Animation_682di"),
-"swipe_in_from_right": SubResource("Animation_gtrx1"),
-"swipe_out_to_right": SubResource("Animation_xp43r")
+&"RESET": SubResource("Animation_682di"),
+&"swipe_in_from_right": SubResource("Animation_gtrx1"),
+&"swipe_out_to_right": SubResource("Animation_xp43r")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbbe6"]
@@ -116,7 +116,7 @@ script = ExtResource("1_4h3wv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_exqtu")
+&"": SubResource("AnimationLibrary_exqtu")
 }
 
 [node name="Panel" type="Control" parent="."]

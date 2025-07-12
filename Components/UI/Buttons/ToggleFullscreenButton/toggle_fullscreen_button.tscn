@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://db856rncs0eq6" path="res://Art/UI/check_square_grey_checkmark.png" id="1_2jowb"]
 [ext_resource type="Texture2D" uid="uid://cggkfs5xuhv6u" path="res://Art/UI/check_square_grey.png" id="2_qbxgv"]
-[ext_resource type="Script" path="res://Components/UI/Buttons/ToggleFullscreenButton/toggle_fullscreen_button.gd" id="3_p8vu6"]
+[ext_resource type="Script" uid="uid://coqo2wpc6swu7" path="res://Components/UI/Buttons/ToggleFullscreenButton/toggle_fullscreen_button.gd" id="3_p8vu6"]
 
 [node name="ToggleFullscreenButton" type="CheckButton"]
 theme_override_colors/font_color = Color(0, 0, 0, 1)

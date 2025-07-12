@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b06kua8btrt5h"]
 
-[ext_resource type="Script" path="res://Components/UI/Screens/GameLoaderBootstrapScreen/game_loader_bootstrap_screen.gd" id="1_d4gsp"]
+[ext_resource type="Script" uid="uid://c10o3q1atx4f5" path="res://Components/UI/Screens/GameLoaderBootstrapScreen/game_loader_bootstrap_screen.gd" id="1_d4gsp"]
 
 [node name="GameLoaderBootstrapScreen" type="Node"]
 script = ExtResource("1_d4gsp")
