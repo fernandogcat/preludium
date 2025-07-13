@@ -7,7 +7,8 @@ env:
   ITCHIO_GAME: ${{ secrets.ITCHIO_GAME }}
   EXPORT_NAME: ${{ secrets.EXPORT_NAME }}
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-  EXPORT_PATH: ./Builds
+  GODOT_PROJECT_PATH: .
+  EXPORT_PATH: $GODOT_PROJECT_PATH/Builds
 
 jobs:
   call-reusable-run-tests:
@@ -64,18 +65,22 @@ jobs:
           # echo ${{ steps.application_version.outputs.debug_output }}
           echo "--- VERSION ---"
           echo "Setting project version to $VERSION"
+          cd $GODOT_PROJECT_PATH
           ./scripts/set_project_version.sh $VERSION
 
       - name: Itch.io - Windows - Build + Deploy 👷+🚀
         run: |
+          cd $GODOT_PROJECT_PATH
           ./scripts/build_and_upload_to_itchio.sh win ${EXPORT_PATH}/win/${EXPORT_NAME}.exe ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
       - name: Itch.io - macOS - Build + Deploy 👷+🚀
         run: |
+          cd $GODOT_PROJECT_PATH
           ./scripts/build_and_upload_to_itchio.sh macos ${EXPORT_PATH}/macos/${EXPORT_NAME}.app ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
 
       - name: Itch.io - Web - Build + Deploy 👷+🚀
         run: |
+          cd $GODOT_PROJECT_PATH
           ./scripts/build_and_upload_to_itchio.sh html5 ${EXPORT_PATH}/html5/index.html ${ITCHIO_USERNAME} ${ITCHIO_GAME} release
   
       - name: Commit and push version change
@@ -84,6 +89,6 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add project.godot
+          git add $GODOT_PROJECT_PATH/project.godot
           git commit -m "🚀 Deployed new build $VERSION!"
           git push
