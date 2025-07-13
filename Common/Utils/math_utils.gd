@@ -20,16 +20,16 @@ static func find_n_items_with_weights(items: Array, n_items: int, let_repeat_ite
 		# print("total_weights: ", total_weights, ", possible_items: ", possible_items, ", selected_items: ", selected_items)
 		var random_weight_chosen = Globals.rng.randi() % total_weights
 		var current_weight = 0
-		var _item_idx = 0
+		# var item_idx = 0
 		for item in possible_items:
 			current_weight += item.weight
 			if current_weight >= random_weight_chosen:
 				selected_items.append(item)
 				if !let_repeat_items:
 					possible_items.erase(item)
-				# print("selected_item_idx: ", _item_idx, ", with random_weight_chosen: ", random_weight_chosen, ", selected: ", selected_items)
+				# print("selecteditem_idx: ", item_idx, ", with random_weight_chosen: ", random_weight_chosen, ", selected: ", selected_items)
 				break
-			_item_idx += 1
+			# item_idx += 1
 	# print("fetch_n_items_with_weights: ", selected_items)
 	return selected_items
 

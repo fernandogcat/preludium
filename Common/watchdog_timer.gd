@@ -1,7 +1,8 @@
 class_name WatchdogTimer
 
-var _watchdog_timer: SceneTreeTimer
 var timeout := 0.6
+
+var _watchdog_timer: SceneTreeTimer
 
 func start_timer():
 	# don't put this timeout too low becuase depending on the hardware it could be too fast and provoke a false positive timeout

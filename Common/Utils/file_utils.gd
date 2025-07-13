@@ -6,7 +6,7 @@ static func get_all_files(path: String, file_ext := "", recursive := false, file
 	var dir := DirAccess.open(path)
 	if file_ext.begins_with("."): # get rid of starting dot if we used, for example ".tscn" instead of "tscn"
 		file_ext = file_ext.substr(1, file_ext.length() - 1)
-	
+
 	if DirAccess.get_open_error() == OK:
 		dir.list_dir_begin()
 
@@ -22,7 +22,6 @@ static func get_all_files(path: String, file_ext := "", recursive := false, file
 					# print("skipping file ", file_name)
 					file_name = dir.get_next()
 					continue
-				
 				files.append(dir.get_current_dir() + "/" + file_name)
 
 			file_name = dir.get_next()

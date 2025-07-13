@@ -7,16 +7,16 @@ const EXPORT_GROUP_DEV_SETTINGS = "DEV Settings"
 
 # @export_group(EXPORT_GROUP_GAME_SETTINGS)
 
+@export_group(EXPORT_GROUP_DEV_SETTINGS)
+
+@export var quick_skip_main_screen: bool
+@export var quick_exit_game: bool
+
 @export_group(EXPORT_GROUP_BUILD_SETTINGS)
 
 # TODO: append type of build
 # TODO: create buildtype enum
 var version: String
-
-@export_group(EXPORT_GROUP_DEV_SETTINGS)
-
-@export var quick_skip_main_screen: bool
-@export var quick_exit_game: bool
 
 func _init():
 	version = ProjectSettings.get_setting("application/config/version")
