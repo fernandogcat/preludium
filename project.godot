@@ -14,14 +14,14 @@ config/name="preludium"
 config/version="v0.2.1-3"
 run/main_scene="res://game_entrypoint.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/image="res://Art/boot_splash.png"
-config/icon="res://Art/icon.png"
+boot_splash/image="res://boot_splash.png"
+config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://Autoloads/globals.gd"
-LoadSceneManager="*res://Autoloads/load_scene_manager.tscn"
-InputManager="*res://Autoloads/input_manager.gd"
+Globals="*res://autoloads/globals.gd"
+LoadSceneManager="*res://autoloads/load_scene_manager.tscn"
+InputManager="*res://autoloads/input_manager.gd"
 
 [display]
 
@@ -36,17 +36,17 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/window_he
 [file_customization]
 
 folder_colors={
-"res://Art/": "red",
-"res://Autoloads/": "orange",
-"res://Builds/": "gray",
-"res://Common/": "yellow",
-"res://Components/": "green",
-"res://Components/UI/": "blue",
-"res://Tests/": "purple",
-"res://Themes/": "pink",
 "res://addons/": "gray",
 "res://addons/window_helper/": "pink",
-"res://scripts/": "gray"
+"res://autoloads/": "orange",
+"res://builds/": "gray",
+"res://common/": "yellow",
+"res://components/": "green",
+"res://components/ui/": "blue",
+"res://fonts/": "red",
+"res://scripts/": "gray",
+"res://tests/": "purple",
+"res://themes/": "pink"
 }
 
 [input]
@@ -83,6 +83,7 @@ right={
 shoot={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
 ]
 }
 

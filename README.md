@@ -12,12 +12,12 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 
 # Main features
 
-- [Load Scene Manager](Autoloads/load_scene_manager.gd) and [loading screen](Components/UI/Screens/LoadingScreen/loading_screen.gd) to be shown when changing between game scenes
+- [Load Scene Manager](Autoloads/load_scene_manager.gd) and [loading screen](components/ui/screens/loading_screen/loading_screen.gd) to be shown when changing between game scenes
 - UI sample screens and modal screens
-    - [Screens](Components/UI/Screens): loading, main menu and game screen
-    - [Modal screens](Components/UI/ModalScreens): pause and settings 
-- [Game Configuration](Components/GameConfiguration/game_configuration.gd) resource to hold common game and developer configurations
-- [Settings Manager](Components/SettingsManager/settings_manager.gd) to persist user settings
+    - [Screens](components/ui/screens): loading, main menu and game screen
+    - [Modal screens](components/ui/modal_screens): pause and settings 
+- [Game Configuration](components/game_configuration/game_configuration.gd) resource to hold common game and developer configurations
+- [Settings Manager](components/settings_manager/settings_manager.gd) to persist user settings
 - [Window Helper](addons/window_helper/window_helper.gd) to have a custom window tool for handy developer shorcuts like to quickly change between game screens
 - [Main theme](Themes/main_theme.tres) to have a common style across UI elements
 - [Tests](Tests/) with [GUT](https://github.com/bitwes/Gut)
@@ -29,6 +29,10 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 - ...
 
 # WIP
+
+## Next TODO
+
+- [ ] ..
 
 ## Improve documentation
 
@@ -58,5 +62,6 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
     - [ ] config/version
 - [ ] update `export_presets.cfg` export_path's
 - [ ] look for other `preludium` text references
-- [ ] change icon and splash screen: `Art/icon.png` and `Art/boot_splash.png`
+- [ ] change icon and splash screen: `icon.png` and `boot_splash.png`
+- [ ] rename `SampleGame` to `PreludiumGame` folder
 - [ ] update this README.md to remove non game relevant information

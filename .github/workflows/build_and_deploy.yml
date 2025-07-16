@@ -8,7 +8,7 @@ env:
   EXPORT_NAME: ${{ secrets.EXPORT_NAME }}
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
   GODOT_PROJECT_PATH: .
-  EXPORT_PATH: $GODOT_PROJECT_PATH/Builds
+  EXPORT_PATH: $GODOT_PROJECT_PATH/builds
 
 jobs:
   call-reusable-run-tests:

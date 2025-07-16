@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameConfiguration" load_steps=2 format=3 uid="uid://p4256xwlfjpg"]
+
+[ext_resource type="Script" uid="uid://c1qh6n31u5s0t" path="res://components/game_configuration/game_configuration.gd" id="1_ax1nr"]
+
+[resource]
+script = ExtResource("1_ax1nr")
+quick_skip_main_screen = true
+quick_exit_game = false

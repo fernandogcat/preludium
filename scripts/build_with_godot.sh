@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Usage on mac when godot is an alias (since aliases are not available on shell scripts):
-# > . scripts/build_with_godot.sh osx ./Builds/osx/export_name.app debug v0.9.0-0
+# > . scripts/build_with_godot.sh osx ./builds/osx/export_name.app debug v0.9.0-0
 
 # if called with incorrect number of arguments, print usage
 if [ "$#" -lt 3 ]; then
-  printf "Need arguments. Usage example: . scripts/build_with_godot.sh osx ./Builds/osx/export_name.app debug v0.9.0-0\n"
+  printf "Need arguments. Usage example: . scripts/build_with_godot.sh osx ./builds/osx/export_name.app debug v0.9.0-0\n"
   return
 fi
 
@@ -25,13 +25,13 @@ fi
 
 valid_modes="debug release"
 if [[ ! "$valid_modes" =~ "$BUILD_MODE" ]]; then
-  echo "Builds mode '$BUILD_MODE' is not valid. Use one of: $valid_modes"
+  echo "builds mode '$BUILD_MODE' is not valid. Use one of: $valid_modes"
   exit 1
 fi
 
 # check for platform and output file
 if [ -z "$PLATFORM" ] || [ -z "$OUTPUT_FILE" ]; then
-  printf "Required parameters not provided\n. Usage: ./build_with_godot.sh win ./Builds/win/export_name.exe (debug|release) (find_local_version|vX.X.X)\n"
+  printf "Required parameters not provided\n. Usage: ./build_with_godot.sh win ./builds/win/export_name.exe (debug|release) (find_local_version|vX.X.X)\n"
   exit 1
 fi
 

@@ -2,7 +2,7 @@
 
 # if called with incorrect number of arguments, print usage
 if [ "$#" -lt 6 ]; then
-  printf "Need arguments. Usage example: . scripts/build_and_upload_to_itchio.sh osx ./Builds/osx/export_name.app itchio_username itchio_game debug v0.9.0-0\n"
+  printf "Need arguments. Usage example: . scripts/build_and_upload_to_itchio.sh osx ./builds/osx/export_name.app itchio_username itchio_game debug v0.9.0-0\n"
   return
 fi
 
