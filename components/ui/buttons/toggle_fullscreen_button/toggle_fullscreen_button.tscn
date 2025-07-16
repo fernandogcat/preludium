@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://gmk6c6ovlgr5"]
+
+[ext_resource type="Texture2D" uid="uid://db856rncs0eq6" path="res://components/ui/buttons/toggle_fullscreen_button/check_square_grey_checkmark.png" id="1_2jowb"]
+[ext_resource type="Texture2D" uid="uid://cggkfs5xuhv6u" path="res://components/ui/buttons/toggle_fullscreen_button/check_square_grey.png" id="2_qbxgv"]
+[ext_resource type="Script" uid="uid://coqo2wpc6swu7" path="res://components/ui/buttons/toggle_fullscreen_button/toggle_fullscreen_button.gd" id="3_p8vu6"]
+
+[node name="ToggleFullscreenButton" type="CheckButton"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_icons/checked = ExtResource("1_2jowb")
+theme_override_icons/unchecked = ExtResource("2_qbxgv")
+text = "Fullscreen"
+alignment = 1
+icon_alignment = 1
+script = ExtResource("3_p8vu6")
