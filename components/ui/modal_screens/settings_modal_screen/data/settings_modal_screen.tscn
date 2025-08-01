@@ -56,6 +56,7 @@ offset_right = 237.0
 offset_bottom = 171.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 60
 
 [node name="TitleLabel" type="Label" parent="Background/CenterContainer"]
