@@ -20,7 +20,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://autoloads/globals.gd"
-LoadSceneManager="*res://autoloads/load_scene_manager.tscn"
+LoadSceneManager="*res://autoloads/load_scene_manager/load_scene_manager.gd"
 InputManager="*res://autoloads/input_manager.gd"
 
 [display]

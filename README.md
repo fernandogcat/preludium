@@ -12,15 +12,15 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 
 # Main features
 
-- [Load Scene Manager](Autoloads/load_scene_manager.gd) and [loading screen](components/ui/screens/loading_screen/loading_screen.gd) to be shown when changing between game scenes
+- [Load Scene Manager](autoloads/scripts/load_scene_manager.gd) and [loading screen](components/ui/screens/loading_screen/loading_screen.gd) to be shown when changing between game scenes
 - UI sample screens and modal screens
     - [Screens](components/ui/screens): loading, main menu and game screen
     - [Modal screens](components/ui/modal_screens): pause and settings 
-- [Game Configuration](components/game_configuration/game_configuration.gd) resource to hold common game and developer configurations
-- [Settings Manager](components/settings_manager/settings_manager.gd) to persist user settings
+- [Game Configuration](components/game_configuration/scripts/game_configuration.gd) resource to hold common game and developer configurations
+- [Settings Manager](components/settings_manager/scripts/settings_manager.gd) to persist user settings
 - [Window Helper](addons/window_helper/window_helper.gd) to have a custom window tool for handy developer shorcuts like to quickly change between game screens
-- [Main theme](Themes/main_theme.tres) to have a common style across UI elements
-- [Tests](Tests/) with [GUT](https://github.com/bitwes/Gut)
+- [Main theme](themes/main_theme.tres) to have a common style across UI elements
+- [Tests](tests/) with [GUT](https://github.com/bitwes/Gut)
 - Github Actions to:
     - [Run tests](.github/workflows/reusable_run_tests.yml)
     - [Build and deploy to itch.io](.github/workflows/build_and_deploy.yml)
