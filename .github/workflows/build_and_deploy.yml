@@ -5,8 +5,9 @@ on:
 env:
   ITCHIO_USERNAME: ${{ secrets.ITCHIO_USERNAME }}
   ITCHIO_GAME: ${{ secrets.ITCHIO_GAME }}
-  EXPORT_NAME: ${{ secrets.EXPORT_NAME }}
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  EXPORT_NAME: preludium
+  # if you change $GODOT_PROJECT_PATH remember to update the path in [run_tests.yml](run_tests.yml) file
   GODOT_PROJECT_PATH: .
   EXPORT_PATH: $GODOT_PROJECT_PATH/builds
 

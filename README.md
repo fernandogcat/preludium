@@ -58,10 +58,12 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 
 # To do after cloning the project
 
-- [ ] update `project.godot`
-    - [ ] config/name
-    - [ ] config/version
-- [ ] update `export_presets.cfg` export_path's
-- [ ] look for other `preludium` text references if any
+- [ ] remove `preludium` references
+    - [ ] update `project.godot`
+        - [ ] config/name
+        - [ ] config/version
+    - [ ] update `export_presets.cfg` export_path's
+    - [ ] update `.github/workflows/build_and_deploy.yml` EXPORT_NAME env variable
+    - [ ] look for other `preludium` text references if any
 - [ ] update icon and splash screen: `icon.png` and `boot_splash.png`
 - [ ] update this README.md to remove non game relevant information (whatever is before this section)
