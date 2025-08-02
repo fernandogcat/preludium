@@ -20,6 +20,7 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 - [Settings Manager](components/settings_manager/scripts/settings_manager.gd) to persist user settings
 - [Window Helper](addons/window_helper/window_helper.gd) to have a custom window tool for handy developer shorcuts like to quickly change between game screens
 - [Main theme](themes/main_theme.tres) to have a common style across UI elements
+- [Linter](https://github.com/Scony/godot-gdscript-toolkit/wiki/3.-Linter) configured [.gdlint](.gdlintrc) file to check for errors and warnings in the code using `gdlint` command in the terminal
 - [Tests](tests/) with [GUT](https://github.com/bitwes/Gut)
 - Github Actions to:
     - [Run tests](.github/workflows/reusable_run_tests.yml)
