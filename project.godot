@@ -36,14 +36,14 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/window_he
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray",
+"res://addons/": "red",
 "res://addons/window_helper/": "pink",
 "res://autoloads/": "orange",
 "res://builds/": "gray",
 "res://common/": "yellow",
 "res://components/": "green",
 "res://components/ui/": "blue",
-"res://fonts/": "red",
+"res://fonts/": "blue",
 "res://scripts/": "gray",
 "res://tests/": "purple",
 "res://themes/": "pink"
