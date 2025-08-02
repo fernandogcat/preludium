@@ -1,6 +1,9 @@
 name: Run tests 🧪
-on: 
-  push
+on:
+  push:
+    paths:
+    # this path has to match with `build_and_deploy.yml` GODOT_PROJECT_PATH env variable. Use 'folder_name/**/*' in case of subfolders.
+      - '**'
 
 jobs:
   call-reusable-run-tests:

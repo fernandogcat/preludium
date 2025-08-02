@@ -4,12 +4,11 @@ signal progress_changed(progress)
 signal new_screen_loading_completed
 
 const LOADING_SCREEN := preload("res://components/ui/screens/loading_screen/data/loading_screen.tscn")
+var GAME_SCREENS := preload("res://components/game_screens/data/game_screens.tres")
 
 const LOAD_ANIMATION_NONE := ""
 const LOAD_ANIMATION_INTRO_DEFAULT := "swipe_in_from_right"
 const LOAD_ANIMATION_OUTRO_DEFAULT := "swipe_out_to_right"
-
-var _game_screens := preload("res://components/game_screens/data/game_screens.tres")
 
 var _next_screen_path: String
 var _progress := []
@@ -22,7 +21,7 @@ func load_scene(
 	intro_animation: String = LoadSceneManager.LOAD_ANIMATION_INTRO_DEFAULT,
 	outro_animation: String = LoadSceneManager.LOAD_ANIMATION_OUTRO_DEFAULT,
 	) -> void:
-	_next_screen_path = _game_screens.get_screen_path(next_screen)
+	_next_screen_path = GAME_SCREENS.get_screen_path(next_screen)
 
 	var new_loading_screen = LOADING_SCREEN.instantiate()
 	new_loading_screen.setup(intro_animation, outro_animation)
