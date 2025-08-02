@@ -52,7 +52,9 @@ func _process(_delta):
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_LOADED:
 			var load_resource := ResourceLoader.load_threaded_get(_next_screen_path)
 			progress_changed.emit(1.0)
-			var _load_result = get_tree().change_scene_to_packed(load_resource)
+			var load_result = get_tree().change_scene_to_packed(load_resource)
+			if load_result != OK:
+				assert(false, "LoadSceneManager failed to change scene to packed: " + _next_screen_path)
 			set_process(false)
 			# get_current_scene() returns null until next frame
 			await get_tree().process_frame
