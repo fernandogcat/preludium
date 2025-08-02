@@ -6,7 +6,7 @@ const WINDOW_HELPER_SCENE = preload("res://addons/window_helper/window_helper.ts
 # A class member to hold the dock during the plugin life cycle.
 var dock
 
-var _game_screens := preload("res://components/game_screens/game_screens.tres")
+var _game_screens := preload("res://components/game_screens/data/game_screens.tres")
 var _load_screen_button: OptionButton
 
 func _enter_tree():
