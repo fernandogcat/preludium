@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Art/icon.png" width="120">
+  <img src="icon.png" width="120">
 </div>
 
 # Preludium
@@ -12,7 +12,7 @@ Preludium is game template project for Godot to make it easier to bootstrap new 
 
 # Main features
 
-- [Load Scene Manager](autoloads/scripts/load_scene_manager.gd) and [loading screen](components/ui/screens/loading_screen/loading_screen.gd) to be shown when changing between game scenes
+- [Load Scene Manager](autoloads/load_scene_manager.gd) and [loading screen](components/ui/screens/loading_screen/scripts/loading_screen.gd) to be shown when changing between game scenes
 - UI sample screens and modal screens
     - [Screens](components/ui/screens): loading, main menu and game screen
     - [Modal screens](components/ui/modal_screens): pause and settings 
